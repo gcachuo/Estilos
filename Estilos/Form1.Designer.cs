@@ -137,24 +137,28 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(109, 58);
+            this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCodigo.Location = new System.Drawing.Point(109, 131);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(559, 29);
             this.txtCodigo.TabIndex = 0;
+            this.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(109, 119);
+            this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNombre.Location = new System.Drawing.Point(109, 202);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(559, 29);
             this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(289, 31);
+            this.label1.Location = new System.Drawing.Point(289, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 24);
             this.label1.TabIndex = 2;
@@ -163,7 +167,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(289, 92);
+            this.label2.Location = new System.Drawing.Point(289, 175);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 24);
             this.label2.TabIndex = 3;
