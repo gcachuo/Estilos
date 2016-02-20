@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace Estilos
 {
-    public partial class Form1 : Form
+    public partial class frmClientes : Form
     {
-        public Form1()
+        public frmClientes()
         {
             InitializeComponent();
-        }
-
-        private void toolStripLabel1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
