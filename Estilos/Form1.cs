@@ -15,5 +15,16 @@ namespace Estilos
         {
             InitializeComponent();
         }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                if (txtCodigo.Text != "")
+                    txtNombre.Text = "Este es un nombre de prueba";
+                else
+                    txtNombre.Text = "";
+            }
+        }
     }
 }

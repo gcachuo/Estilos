@@ -39,8 +39,8 @@
             this.cOLORESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aLTAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelContenido = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
@@ -100,6 +100,7 @@
             // 
             // cLIENTESToolStripMenuItem
             // 
+            this.cLIENTESToolStripMenuItem.Enabled = false;
             this.cLIENTESToolStripMenuItem.Name = "cLIENTESToolStripMenuItem";
             this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cLIENTESToolStripMenuItem.Text = "CLIENTES";
@@ -126,28 +127,29 @@
             // 
             this.panelContenido.Controls.Add(this.label2);
             this.panelContenido.Controls.Add(this.label1);
-            this.panelContenido.Controls.Add(this.textBox2);
-            this.panelContenido.Controls.Add(this.textBox1);
+            this.panelContenido.Controls.Add(this.txtNombre);
+            this.panelContenido.Controls.Add(this.txtCodigo);
             this.panelContenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelContenido.Location = new System.Drawing.Point(12, 28);
             this.panelContenido.Name = "panelContenido";
             this.panelContenido.Size = new System.Drawing.Size(752, 377);
             this.panelContenido.TabIndex = 1;
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(559, 29);
-            this.textBox1.TabIndex = 0;
+            this.txtCodigo.Location = new System.Drawing.Point(109, 58);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(559, 29);
+            this.txtCodigo.TabIndex = 0;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(109, 119);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(559, 29);
-            this.textBox2.TabIndex = 1;
+            this.txtNombre.Location = new System.Drawing.Point(109, 119);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
+            this.txtNombre.Size = new System.Drawing.Size(559, 29);
+            this.txtNombre.TabIndex = 1;
             // 
             // label1
             // 
@@ -201,8 +203,8 @@
         private System.Windows.Forms.ToolStripMenuItem cOLORESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aLTAToolStripMenuItem;
         private System.Windows.Forms.Panel panelContenido;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }
