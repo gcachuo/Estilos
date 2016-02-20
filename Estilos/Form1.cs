@@ -15,5 +15,10 @@ namespace Estilos
         {
             InitializeComponent();
         }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
