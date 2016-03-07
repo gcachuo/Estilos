@@ -15,7 +15,7 @@ namespace Estilos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmClientes());
+            Application.Run(new frmMenu());
         }
     }
 }
