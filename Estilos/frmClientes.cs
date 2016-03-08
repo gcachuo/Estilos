@@ -12,87 +12,27 @@ namespace Estilos
     public partial class frmClientes : Form
     {
         clsBD bd = new clsBD();
-        string tabla = "Cliente";
-
         public frmClientes()
         {
             InitializeComponent();
         }
 
-        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        private void aLTADECLIENTESToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            if((new frmAltaClientes().ShowDialog().ToString()) == "Cancel")
             {
-                switch (txtCodigo.Text)
-                {
-                    case "1":
-                        txtNombre.Text = "Juan Perez";
-                        break;
-                    case "2":
-                        txtNombre.Text = "Francisco Mendez";
-                        break;
-                    case "3":
-                        txtNombre.Text = "Agustin Melgar";
-                        break;
-                    default:
-                        txtNombre.Text = "";
-                        break;
-                }
-
-
-
+                cargarTabla();
             }
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
+        private void frmClientes_Load(object sender, EventArgs e)
         {
-
+            cargarTabla();
         }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
+        void cargarTabla()
         {
-            lblEstatus.Text = "";
-            string[] campos = { txtCodigo.Text, txtNombre.Text };
-            if (guardarCliente(campos))
-            {
-                lblEstatus.Text = "Guardado Correcto";
-                txtCodigo.Text = "";
-                txtNombre.Text = "";
-            }
-            else
-                lblEstatus.Text = "Error al guardar";
-        }
-        bool guardarCliente(String[] campos)
-        {
-            var values = arraytofields(campos);
-            return (bd.insert(tabla, "codigoCliente, nombreCliente", values));
-        }
-        string arraytofields(string[] arrayCadena)
-        {
-            var cadena = "";
-            var index = 0;
-            foreach (string campo in arrayCadena)
-            {
-                if (index != 0)
-                {
-                    cadena += ",";
-                }
-                cadena += "'" + campo + "'";
-                index++;
-            }
-            return cadena;
-        }
-        void selectClientes()
-        {
-            var campos = "*";
-
-            foreach (DataRow row in bd.select(campos, tabla).Rows)
-            {
-                foreach (var item in row.ItemArray)
-                {
-                    var a = item.ToString();
-                }
-            }
+            var tabla = bd.select("codigoCliente CODIGO, nombreCliente CLIENTE", "Cliente");
+            dgvClientes.DataSource = tabla;
         }
     }
 }

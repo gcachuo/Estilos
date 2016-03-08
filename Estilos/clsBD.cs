@@ -30,29 +30,35 @@ namespace Estilos
         }
         public DataTable select(string campos, string nombreTabla, string where = "")
         {
-            var cmd = new SqlDataAdapter("SELECT " + campos + "FROM " + nombreTabla + " " + where, conexion);
+            var cmd = new SqlDataAdapter("SELECT " + campos + " FROM " + nombreTabla + " " + where, conexion);
             var ds = new DataSet();
 
-            using (conexion)
-            {
-                cmd.Fill(ds);
-            }
+            conexion.Open();
+            cmd.Fill(ds);
+            conexion.Close();
 
             var tabla = ds.Tables[0];
             return tabla;
         }
-        public bool insert(string table, string nombresCampos, string campos)
+        public string insert(string table, string nombresCampos, string campos)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into " + table + "(" + nombresCampos + ") values(" + campos + ")";
-            cmd.Connection = conexion;
+            try {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "insert into " + table + "(" + nombresCampos + ") values(" + campos + ")";
+                cmd.Connection = conexion;
 
             conexion.Open();
             cmd.ExecuteNonQuery();
-            conexion.Close();
+                conexion.Close();
 
-            return true;
+                return "true";
+            }
+            catch(SqlException ex)
+            {
+                conexion.Close();
+                return ex.Message.ToUpper();
+            }
         }
     }
 }

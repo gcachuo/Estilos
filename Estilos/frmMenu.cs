@@ -18,8 +18,17 @@ namespace Estilos
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            var ventana = new frmClientes();
-            ventana.ShowDialog();
+            var ventana = new frmClientes().ShowDialog();
+        }
+
+        private void btnClientes_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAltaClientes_Click(object sender, EventArgs e)
+        {
+            var ventana = new frmAltaClientes().ShowDialog();
         }
     }
 }
