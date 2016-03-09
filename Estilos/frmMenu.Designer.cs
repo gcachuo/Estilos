@@ -30,6 +30,7 @@
         {
             this.btnAltaClientes = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
+            this.btnEstilos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAltaClientes
@@ -52,11 +53,22 @@
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
+            // btnEstilos
+            // 
+            this.btnEstilos.Location = new System.Drawing.Point(13, 72);
+            this.btnEstilos.Name = "btnEstilos";
+            this.btnEstilos.Size = new System.Drawing.Size(147, 23);
+            this.btnEstilos.TabIndex = 2;
+            this.btnEstilos.Text = "ESTILOS";
+            this.btnEstilos.UseVisualStyleBackColor = true;
+            this.btnEstilos.Click += new System.EventHandler(this.btnEstilos_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 467);
+            this.Controls.Add(this.btnEstilos);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnAltaClientes);
             this.MaximizeBox = false;
@@ -72,5 +84,6 @@
 
         private System.Windows.Forms.Button btnAltaClientes;
         private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Button btnEstilos;
     }
 }

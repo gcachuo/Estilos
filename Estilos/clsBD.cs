@@ -30,17 +30,25 @@ namespace Estilos
         }
         public DataTable select(string campos, string nombreTabla, string where = "")
         {
-            var cmd = new SqlDataAdapter("SELECT " + campos + " FROM " + nombreTabla + " " + where, conexion);
-            var ds = new DataSet();
+            try {
+                var cmd = new SqlDataAdapter("SELECT " + campos + " FROM " + nombreTabla + " " + where, conexion);
+                var ds = new DataSet();
 
-            conexion.Open();
-            cmd.Fill(ds);
-            conexion.Close();
+                conexion.Open();
+                cmd.Fill(ds);
+                conexion.Close();
 
-            var tabla = ds.Tables[0];
-            return tabla;
+                var tabla = ds.Tables[0];
+                return tabla;
+            }
+            catch(SqlException ex)
+            {
+                conexion.Close();
+                System.Windows.Forms.MessageBox.Show(ex.Message.ToUpper(), "ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                return null;
+            }
         }
-        public string insert(string table, string nombresCampos, string campos)
+        public bool insert(string table, string nombresCampos, string campos)
         {
             try {
                 SqlCommand cmd = new SqlCommand();
@@ -52,12 +60,13 @@ namespace Estilos
             cmd.ExecuteNonQuery();
                 conexion.Close();
 
-                return "true";
+                return true;
             }
             catch(SqlException ex)
             {
                 conexion.Close();
-                return ex.Message.ToUpper();
+                System.Windows.Forms.MessageBox.Show(ex.Message.ToUpper(), "ERROR AL GUARDAR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                return false;
             }
         }
     }

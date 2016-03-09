@@ -21,27 +21,7 @@ namespace Estilos
 
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                switch (txtCodigo.Text)
-                {
-                    case "1":
-                        txtNombre.Text = "Juan Perez";
-                        break;
-                    case "2":
-                        txtNombre.Text = "Francisco Mendez";
-                        break;
-                    case "3":
-                        txtNombre.Text = "Agustin Melgar";
-                        break;
-                    default:
-                        txtNombre.Text = "";
-                        break;
-                }
-
-
-
-            }
+           
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -58,7 +38,11 @@ namespace Estilos
                 return;
             }
             string[] campos = { txtCodigo.Text, txtNombre.Text };
-            if (guardarCliente(campos))
+            guardarCliente(campos);
+        }
+        void guardarCliente(String[] campos)
+        {
+            if(bd.insert(tabla, "codigoCliente, nombreCliente", arraytofields(campos)))
             {
                 lblEstatus.Text = "GUARDADO";
                 txtCodigo.Text = "";
@@ -66,18 +50,6 @@ namespace Estilos
             }
             else
                 lblEstatus.Text = "ERROR AL GUARDAR";
-        }
-        bool guardarCliente(String[] campos)
-        {
-            var values = arraytofields(campos);
-            var insert = bd.insert(tabla, "codigoCliente, nombreCliente", values);
-            if (insert == "true")
-                return true;
-            else
-            {
-                MessageBox.Show(insert, "ERROR AL GUARDAR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
         }
         string arraytofields(string[] arrayCadena)
         {

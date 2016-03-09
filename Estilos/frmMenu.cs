@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Estilos
@@ -18,7 +12,7 @@ namespace Estilos
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            var ventana = new frmClientes().ShowDialog();
+            new frmClientes().ShowDialog();
         }
 
         private void btnClientes_Click_1(object sender, EventArgs e)
@@ -28,7 +22,12 @@ namespace Estilos
 
         private void btnAltaClientes_Click(object sender, EventArgs e)
         {
-            var ventana = new frmAltaClientes().ShowDialog();
+            new frmAltaClientes().ShowDialog();
+        }
+
+        private void btnEstilos_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
