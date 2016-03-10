@@ -45,6 +45,7 @@
             this.dgvClientes.Size = new System.Drawing.Size(284, 237);
             this.dgvClientes.TabIndex = 0;
             this.dgvClientes.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvClientes_UserDeletedRow);
+            this.dgvClientes.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvClientes_UserDeletingRow);
             // 
             // menuStrip1
             // 

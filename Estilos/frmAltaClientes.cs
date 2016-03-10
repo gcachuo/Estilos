@@ -21,7 +21,7 @@ namespace Estilos
 
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -42,10 +42,10 @@ namespace Estilos
         }
         void guardarCliente(String[] campos)
         {
-            if(bd.insert(tabla, "codigoCliente, nombreCliente", arraytofields(campos)))
+            if (bd.insert(tabla, "codigoCliente, nombreCliente", arraytofields(campos)))
             {
                 lblEstatus.Text = "GUARDADO";
-                txtCodigo.Text = "";
+                txtCodigo.Text = obtenerUltimoCodigo().ToString();
                 txtNombre.Text = "";
             }
             else
@@ -77,6 +77,29 @@ namespace Estilos
                     var a = item.ToString();
                 }
             }
+        }
+
+        private void btnRegresar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmAltaClientes_Load(object sender, EventArgs e)
+        {
+            txtCodigo.Text = obtenerUltimoCodigo().ToString();
+        }
+        int obtenerUltimoCodigo()
+        {
+            int codigo;
+            try
+            {
+                codigo = int.Parse(bd.select("codigoCliente codigo", "Cliente", "order by 1 desc").Rows[0]["codigo"].ToString()) + 1;
+            }
+            catch (Exception)
+            {
+                codigo = 1;
+            }
+            return codigo;
         }
     }
 }

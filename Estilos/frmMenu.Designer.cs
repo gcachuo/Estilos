@@ -28,62 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAltaClientes = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.btnEstilos = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.cLIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cLIENTESToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aLTAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eSTILOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnAltaClientes
+            // menuStrip1
             // 
-            this.btnAltaClientes.Location = new System.Drawing.Point(12, 12);
-            this.btnAltaClientes.Name = "btnAltaClientes";
-            this.btnAltaClientes.Size = new System.Drawing.Size(148, 23);
-            this.btnAltaClientes.TabIndex = 0;
-            this.btnAltaClientes.Text = "ALTA DE CLIENTES";
-            this.btnAltaClientes.UseVisualStyleBackColor = true;
-            this.btnAltaClientes.Click += new System.EventHandler(this.btnAltaClientes_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cLIENTESToolStripMenuItem,
+            this.eSTILOSToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(813, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnClientes
+            // cLIENTESToolStripMenuItem
             // 
-            this.btnClientes.Location = new System.Drawing.Point(12, 42);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(148, 23);
-            this.btnClientes.TabIndex = 1;
-            this.btnClientes.Text = "CLIENTES";
-            this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            this.cLIENTESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cLIENTESToolStripMenuItem1,
+            this.aLTAToolStripMenuItem});
+            this.cLIENTESToolStripMenuItem.Name = "cLIENTESToolStripMenuItem";
+            this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.cLIENTESToolStripMenuItem.Text = "CLIENTES";
             // 
-            // btnEstilos
+            // cLIENTESToolStripMenuItem1
             // 
-            this.btnEstilos.Location = new System.Drawing.Point(13, 72);
-            this.btnEstilos.Name = "btnEstilos";
-            this.btnEstilos.Size = new System.Drawing.Size(147, 23);
-            this.btnEstilos.TabIndex = 2;
-            this.btnEstilos.Text = "ESTILOS";
-            this.btnEstilos.UseVisualStyleBackColor = true;
-            this.btnEstilos.Click += new System.EventHandler(this.btnEstilos_Click);
+            this.cLIENTESToolStripMenuItem1.Name = "cLIENTESToolStripMenuItem1";
+            this.cLIENTESToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.cLIENTESToolStripMenuItem1.Text = "CLIENTES";
+            this.cLIENTESToolStripMenuItem1.Click += new System.EventHandler(this.cLIENTESToolStripMenuItem1_Click);
+            // 
+            // aLTAToolStripMenuItem
+            // 
+            this.aLTAToolStripMenuItem.Name = "aLTAToolStripMenuItem";
+            this.aLTAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aLTAToolStripMenuItem.Text = "ALTA";
+            this.aLTAToolStripMenuItem.Click += new System.EventHandler(this.aLTAToolStripMenuItem_Click);
+            // 
+            // eSTILOSToolStripMenuItem
+            // 
+            this.eSTILOSToolStripMenuItem.Name = "eSTILOSToolStripMenuItem";
+            this.eSTILOSToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.eSTILOSToolStripMenuItem.Text = "ESTILOS";
+            this.eSTILOSToolStripMenuItem.Click += new System.EventHandler(this.eSTILOSToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 467);
-            this.Controls.Add(this.btnEstilos);
-            this.Controls.Add(this.btnClientes);
-            this.Controls.Add(this.btnAltaClientes);
-            this.MaximizeBox = false;
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAltaClientes;
-        private System.Windows.Forms.Button btnClientes;
-        private System.Windows.Forms.Button btnEstilos;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cLIENTESToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cLIENTESToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aLTAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eSTILOSToolStripMenuItem;
     }
 }

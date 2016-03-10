@@ -30,7 +30,8 @@ namespace Estilos
         }
         public DataTable select(string campos, string nombreTabla, string where = "")
         {
-            try {
+            try
+            {
                 var cmd = new SqlDataAdapter("SELECT " + campos + " FROM " + nombreTabla + " " + where, conexion);
                 var ds = new DataSet();
 
@@ -41,7 +42,7 @@ namespace Estilos
                 var tabla = ds.Tables[0];
                 return tabla;
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 conexion.Close();
                 System.Windows.Forms.MessageBox.Show(ex.Message.ToUpper(), "ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
@@ -50,14 +51,38 @@ namespace Estilos
         }
         public bool insert(string table, string nombresCampos, string campos)
         {
-            try {
+            try
+            {
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into " + table + "(" + nombresCampos + ") values(" + campos + ")";
                 cmd.Connection = conexion;
 
-            conexion.Open();
-            cmd.ExecuteNonQuery();
+                conexion.Open();
+                cmd.ExecuteNonQuery();
+                conexion.Close();
+
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                conexion.Close();
+                System.Windows.Forms.MessageBox.Show(ex.Message.ToUpper(), "ERROR AL GUARDAR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        public bool updateSingle(string table, string nombreCampo, string campo, string where)
+        {
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update " + table + " set " + nombreCampo + " = '" + campo + "' where "+where;
+                cmd.Connection = conexion;
+
+                conexion.Open();
+                cmd.ExecuteNonQuery();
                 conexion.Close();
 
                 return true;
