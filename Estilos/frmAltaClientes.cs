@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Estilos
@@ -12,6 +7,7 @@ namespace Estilos
     public partial class frmAltaClientes : Form
     {
         clsBD bd = new clsBD();
+        globales g = new globales();
         string tabla = "Cliente";
 
         public frmAltaClientes()
@@ -42,7 +38,7 @@ namespace Estilos
         }
         void guardarCliente(String[] campos)
         {
-            if (bd.insert(tabla, "codigoCliente, nombreCliente", arraytofields(campos)))
+            if (bd.insert(tabla, "codigoCliente, nombreCliente", g.arraytofields(campos)))
             {
                 lblEstatus.Text = "GUARDADO";
                 txtCodigo.Text = obtenerUltimoCodigo().ToString();
@@ -51,21 +47,7 @@ namespace Estilos
             else
                 lblEstatus.Text = "ERROR AL GUARDAR";
         }
-        string arraytofields(string[] arrayCadena)
-        {
-            var cadena = "";
-            var index = 0;
-            foreach (string campo in arrayCadena)
-            {
-                if (index != 0)
-                {
-                    cadena += ",";
-                }
-                cadena += "'" + campo + "'";
-                index++;
-            }
-            return cadena;
-        }
+        
         void selectClientes()
         {
             var campos = "*";

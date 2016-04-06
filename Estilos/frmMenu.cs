@@ -42,7 +42,7 @@ namespace Estilos
 
         private void eSTILOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmEstilos().ShowDialog();
+            new frmAltaEstilos().ShowDialog();
         }
     }
 }

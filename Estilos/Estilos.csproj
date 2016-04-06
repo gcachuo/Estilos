@@ -56,6 +56,12 @@
     <Compile Include="frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAltaEstilos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaEstilos.Designer.cs">
+      <DependentUpon>frmAltaEstilos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEstilos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,7 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="globales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAltaClientes.resx">
@@ -76,8 +83,8 @@
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEstilos.resx">
-      <DependentUpon>frmEstilos.cs</DependentUpon>
+    <EmbeddedResource Include="frmAltaEstilos.resx">
+      <DependentUpon>frmAltaEstilos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
