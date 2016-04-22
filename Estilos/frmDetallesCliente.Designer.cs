@@ -1,11 +1,12 @@
 ﻿namespace Estilos
 {
-    partial class frmEstilos
+    partial class frmDetallesCliente
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private string v;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,29 +29,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.aLTADEESTILOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.dgvEstilos = new System.Windows.Forms.DataGridView();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstilos)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // lblNombre
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aLTADEESTILOSToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(362, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // aLTADEESTILOSToolStripMenuItem
-            // 
-            this.aLTADEESTILOSToolStripMenuItem.Name = "aLTADEESTILOSToolStripMenuItem";
-            this.aLTADEESTILOSToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
-            this.aLTADEESTILOSToolStripMenuItem.Text = "ALTA DE ESTILOS";
-            this.aLTADEESTILOSToolStripMenuItem.Click += new System.EventHandler(this.aLTADEESTILOSToolStripMenuItem_Click);
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(13, 13);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 0;
+            this.lblNombre.Text = "Nombre";
             // 
             // dgvEstilos
             // 
@@ -59,29 +50,25 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEstilos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEstilos.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvEstilos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEstilos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEstilos.Location = new System.Drawing.Point(0, 24);
+            this.dgvEstilos.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvEstilos.Location = new System.Drawing.Point(0, 39);
             this.dgvEstilos.Name = "dgvEstilos";
             this.dgvEstilos.ReadOnly = true;
-            this.dgvEstilos.Size = new System.Drawing.Size(362, 294);
+            this.dgvEstilos.Size = new System.Drawing.Size(416, 274);
             this.dgvEstilos.TabIndex = 1;
             // 
-            // frmEstilos
+            // frmDetallesCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 318);
+            this.ClientSize = new System.Drawing.Size(416, 312);
             this.Controls.Add(this.dgvEstilos);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "frmEstilos";
+            this.Controls.Add(this.lblNombre);
+            this.Name = "frmDetallesCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEstilos";
+            this.Text = "frmDetallesCliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmEstilos_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstilos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -90,8 +77,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem aLTADEESTILOSToolStripMenuItem;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.DataGridView dgvEstilos;
     }
 }

@@ -55,7 +55,7 @@ namespace Estilos
         bool guardarEstilo(string[] campos)
         {
             tabla = "Estilo";
-            if (bd.insert(tabla, "codigoEstilo, nombreEstilo, idColor, idCliente", g.arraytofields(campos)))
+            if (bd.insert(tabla, "codigoEstilo, nombreEstilo, idColor, codigoCliente", g.arraytofields(campos)))
             {
                 return true;
             }

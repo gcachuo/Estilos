@@ -6,6 +6,7 @@ namespace Estilos
     public partial class frmClientes : Form
     {
         clsBD bd = new clsBD();
+        Cliente cliente = new Cliente();
         public frmClientes()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace Estilos
         }
         void cargarTabla()
         {
-            var tabla = bd.select("codigoCliente CODIGO, nombreCliente CLIENTE", "Cliente", "where estatusCliente=1");
+            var tabla = bd.select(cliente.codigo+", "+cliente.nombre, cliente.tabla, cliente.estatus +"=1");
             dgvClientes.DataSource = tabla;
         }
 
@@ -45,8 +46,18 @@ namespace Estilos
             if (dialogResult == DialogResult.OK)
             {
                 var codigo = dgvClientes.SelectedRows[0].Cells["CODIGO"].Value.ToString();
-                bd.updateSingle("Cliente", "estatusCliente", "0", "codigoCliente = " + codigo);
+                bd.updateSingle(cliente.tabla, cliente.estatus, "0", "codigoCliente = " + codigo);
             }
+        }
+
+        private void dgvClientes_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new frmDetallesCliente(dgvClientes.Rows[e.RowIndex].Cells["CODIGO"].Value.ToString()).ShowDialog();
         }
     }
 }

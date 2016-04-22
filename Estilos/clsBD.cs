@@ -28,18 +28,19 @@ namespace Estilos
 
             return conexion;
         }
-        public DataTable select(string campos, string nombreTabla, string where = "")
+        public DataTable select(string campos, string nombreTabla, string where = "", string order = "")
         {
+            if (where != "")
+            {
+                where = "where " + where;
+            }
+            if (order != "")
+            {
+                order = "order by " + order;
+            }
             try
             {
-                var cmd = new SqlDataAdapter("SELECT " + campos + " FROM " + nombreTabla + " " + where, conexion);
-                var ds = new DataSet();
-
-                conexion.Open();
-                cmd.Fill(ds);
-                conexion.Close();
-
-                var tabla = ds.Tables[0];
+                var tabla = selectTabla("SELECT " + campos + " FROM " + nombreTabla + " " + where + " " + order);
                 return tabla;
             }
             catch (SqlException ex)
@@ -48,6 +49,42 @@ namespace Estilos
                 System.Windows.Forms.MessageBox.Show(ex.Message.ToUpper(), "ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 return null;
             }
+        }
+        public DataTable selectEstilos(string id = "")
+        {
+            if (id != "")
+            {
+                id = "and e.codigoCliente=" + id;
+            }
+            try
+            {
+                var tabla = selectTabla(
+                      "SELECT codigoEstilo CODIGO, nombreEstilo NOMBRE,nombreColor COLOR, nombreCliente CLIENTE " +
+                      "FROM Estilo e " +
+                      "inner join Cliente c on c.codigoCliente = e.codigoCliente " +
+                      "inner join Color co on co.idColor = e.idColor " +
+                      "where estatusEstilo=1 " + id);
+
+                return tabla;
+            }
+            catch (SqlException ex)
+            {
+                conexion.Close();
+                System.Windows.Forms.MessageBox.Show(ex.Message.ToUpper(), "ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                return null;
+            }
+        }
+        DataTable selectTabla(string sql)
+        {
+            var cmd = new SqlDataAdapter(sql, conexion);
+            var ds = new DataSet();
+
+            conexion.Open();
+            cmd.Fill(ds);
+            conexion.Close();
+
+            var tabla = ds.Tables[0];
+            return tabla;
         }
         public bool insert(string table, string nombresCampos, string campos)
         {
@@ -78,7 +115,7 @@ namespace Estilos
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "update " + table + " set " + nombreCampo + " = '" + campo + "' where "+where;
+                cmd.CommandText = "update " + table + " set " + nombreCampo + " = '" + campo + "' where " + where;
                 cmd.Connection = conexion;
 
                 conexion.Open();
@@ -87,7 +124,7 @@ namespace Estilos
 
                 return true;
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 conexion.Close();
                 System.Windows.Forms.MessageBox.Show(ex.Message.ToUpper(), "ERROR AL GUARDAR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);

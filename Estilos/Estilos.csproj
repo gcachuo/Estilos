@@ -50,6 +50,12 @@
     <Compile Include="frmAltaClientes.Designer.cs">
       <DependentUpon>frmAltaClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAltaColores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaColores.Designer.cs">
+      <DependentUpon>frmAltaColores.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,12 @@
     </Compile>
     <Compile Include="frmAltaEstilos.Designer.cs">
       <DependentUpon>frmAltaEstilos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetallesCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetallesCliente.Designer.cs">
+      <DependentUpon>frmDetallesCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEstilos.cs">
       <SubType>Form</SubType>
@@ -80,11 +92,20 @@
     <EmbeddedResource Include="frmAltaClientes.resx">
       <DependentUpon>frmAltaClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaColores.resx">
+      <DependentUpon>frmAltaColores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaEstilos.resx">
       <DependentUpon>frmAltaEstilos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetallesCliente.resx">
+      <DependentUpon>frmDetallesCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstilos.resx">
+      <DependentUpon>frmEstilos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>

@@ -8,7 +8,8 @@ namespace Estilos
     {
         clsBD bd = new clsBD();
         globales g = new globales();
-        string tabla = "Cliente";
+        static Cliente cliente = new Cliente();
+        string tabla = cliente.tabla;
 
         public frmAltaClientes()
         {
@@ -47,7 +48,7 @@ namespace Estilos
             else
                 lblEstatus.Text = "ERROR AL GUARDAR";
         }
-        
+
         void selectClientes()
         {
             var campos = "*";
@@ -75,7 +76,7 @@ namespace Estilos
             int codigo;
             try
             {
-                codigo = int.Parse(bd.select("codigoCliente codigo", "Cliente", "order by 1 desc").Rows[0]["codigo"].ToString()) + 1;
+                codigo = int.Parse(bd.select(cliente.codigo, cliente.tabla, "", "1 desc").Rows[0]["CODIGO"].ToString()) + 1;
             }
             catch (Exception)
             {

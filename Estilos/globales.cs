@@ -18,4 +18,11 @@
             return cadena;
         }
     }
+    class Cliente
+    {
+        public string tabla = "Cliente";
+        public string codigo = "codigoCliente CODIGO ";
+        public string nombre = "nombreCliente NOMBRE ";
+        public string estatus = "estatusCliente";
+    }
 }

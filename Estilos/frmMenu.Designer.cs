@@ -33,6 +33,9 @@
             this.cLIENTESToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aLTAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eSTILOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eSTILOSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aLTAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aLTADECOLORESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,23 +62,48 @@
             // cLIENTESToolStripMenuItem1
             // 
             this.cLIENTESToolStripMenuItem1.Name = "cLIENTESToolStripMenuItem1";
-            this.cLIENTESToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.cLIENTESToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.cLIENTESToolStripMenuItem1.Text = "CLIENTES";
             this.cLIENTESToolStripMenuItem1.Click += new System.EventHandler(this.cLIENTESToolStripMenuItem1_Click);
             // 
             // aLTAToolStripMenuItem
             // 
             this.aLTAToolStripMenuItem.Name = "aLTAToolStripMenuItem";
-            this.aLTAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aLTAToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.aLTAToolStripMenuItem.Text = "ALTA";
             this.aLTAToolStripMenuItem.Click += new System.EventHandler(this.aLTAToolStripMenuItem_Click);
             // 
             // eSTILOSToolStripMenuItem
             // 
+            this.eSTILOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eSTILOSToolStripMenuItem1,
+            this.aLTAToolStripMenuItem1,
+            this.aLTADECOLORESToolStripMenuItem});
             this.eSTILOSToolStripMenuItem.Name = "eSTILOSToolStripMenuItem";
             this.eSTILOSToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.eSTILOSToolStripMenuItem.Text = "ESTILOS";
             this.eSTILOSToolStripMenuItem.Click += new System.EventHandler(this.eSTILOSToolStripMenuItem_Click);
+            // 
+            // eSTILOSToolStripMenuItem1
+            // 
+            this.eSTILOSToolStripMenuItem1.Name = "eSTILOSToolStripMenuItem1";
+            this.eSTILOSToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.eSTILOSToolStripMenuItem1.Text = "ESTILOS";
+            this.eSTILOSToolStripMenuItem1.Click += new System.EventHandler(this.eSTILOSToolStripMenuItem1_Click);
+            // 
+            // aLTAToolStripMenuItem1
+            // 
+            this.aLTAToolStripMenuItem1.Name = "aLTAToolStripMenuItem1";
+            this.aLTAToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.aLTAToolStripMenuItem1.Text = "ALTA DE ESTILOS";
+            this.aLTAToolStripMenuItem1.Click += new System.EventHandler(this.aLTAToolStripMenuItem1_Click);
+            // 
+            // aLTADECOLORESToolStripMenuItem
+            // 
+            this.aLTADECOLORESToolStripMenuItem.Name = "aLTADECOLORESToolStripMenuItem";
+            this.aLTADECOLORESToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.aLTADECOLORESToolStripMenuItem.Text = "ALTA DE COLORES";
+            this.aLTADECOLORESToolStripMenuItem.Click += new System.EventHandler(this.aLTADECOLORESToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -101,5 +129,8 @@
         private System.Windows.Forms.ToolStripMenuItem cLIENTESToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aLTAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eSTILOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eSTILOSToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aLTAToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aLTADECOLORESToolStripMenuItem;
     }
 }
